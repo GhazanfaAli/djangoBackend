@@ -32,7 +32,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1',
     'localhost',
     '10.11.112.45',
-    '0.0.0.0'
+    '0.0.0.0',
+    '.vercel.app'
     ]
 
 
@@ -231,7 +232,15 @@ SIMPLE_JWT = {
 #     "http://localhost:8000",  # Allow localhost access
 #     "http://192.168.10.6:8000",  # Allow access from your physical device
 # ]
+CORS_ALLOWED_ORIGINS = [
+    "https://your-vercel-app.vercel.app",  # Replace with your actual Vercel frontend URL
+    "http://localhost:3000",               # For local development with React/Next.js
+]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://your-vercel-app.vercel.app",  # Same as above
+    "http://localhost:3000",
+]
 # CSRF_TRUSTED_ORIGINS = [
 #     "http://127.0.0.1:8000",
 #     "http://localhost:8000",
